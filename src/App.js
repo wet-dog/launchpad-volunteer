@@ -13,7 +13,6 @@ import BusinessSignUp from './BusinessSignUp';
 import UserSignUp from './UserSignUp';
 import UserProfile from './UserProfile';
 
-import AppBar from '@material-ui/core/Appbar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -53,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   menuBar: {
-    alignItems: "center",
+    backgroundColor: "#1669BB"
   },
   DropDown: {
     zIndex: 5,
@@ -124,8 +123,8 @@ function App() {
     <Router>
       <div className="App"> 
         <header style={{flexGrow: 0}}>        
-          <AppBar position="static" className={classes.menuBar}>
-            <Toolbar>
+          <Paper position="static" className={classes.menuBar}>
+            <Toolbar color="inherit" style={{display: "flex", justifyContent: "space-around"}}>
               <DropDown edge="start" className={classes.dropDown}></DropDown>
               <Typography variant="h6" className={classes.title}>
                 Volunteer
@@ -137,7 +136,7 @@ function App() {
               <Button color="inherit" component={Link} to="/BusinessSignUp">Business Sign Up</Button>
               <Button color="inherit">Login</Button>
             </Toolbar>
-          </AppBar>
+          </Paper>
         </header>
         <main className="App-header">
           <Switch>
